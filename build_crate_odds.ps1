@@ -68,12 +68,11 @@ foreach ($prop in $data.duplicate_to_scrap.PSObject.Properties) {
 
 $html = @"
 <!DOCTYPE html>
-<!-- Draft — pending legal review -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mystery Crate Odds &amp; Pity Disclosure — Burstdown | Frictionborn</title>
+  <title>Mystery Crate Odds &amp; Pity Disclosure - Burstdown | Frictionborn</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -135,9 +134,9 @@ $($scrapRows -join "`n")
     <ul>
       <li><strong>In-Game Disclosure Before Open (<code>show_odds_before_open: $($data.compliance.show_odds_before_open.ToString().ToLower())</code>):</strong> These exact percentages and your current pity-timer counter are displayed directly on the crate purchase/open screen inside Burstdown.</li>
       <li><strong>No "Kompu Gacha" / Set-Completion Prizes (<code>set_completion_rewards: $($data.compliance.set_completion_rewards.ToString().ToLower())</code>):</strong> There are no rewards or bonuses gated behind collecting a complete set of randomized crate items.</li>
-      <li><strong>Minor Mode Protection (<code>minor_mode_paid_crates: $($data.compliance.minor_mode_paid_crates.ToString().ToLower())</code>):</strong> Paid mystery crates (such as the Premium Crate) are completely disabled for players in the <code>13–17</code> age band.</li>
+      <li><strong>Minor Mode Protection (<code>minor_mode_paid_crates: $($data.compliance.minor_mode_paid_crates.ToString().ToLower())</code>):</strong> Paid mystery crates (such as the Premium Crate) are completely disabled for players in the <code>13&ndash;17</code> age band.</li>
       <li><strong>Regional Availability (<code>$($data.compliance.paid_blocked_countries_rc_key)</code>):</strong> Paid mystery crates are disabled in jurisdictions where paid loot boxes are prohibited or restricted by law, including <strong>Belgium (<code>BE</code>)</strong> and <strong>Brazil (<code>BR</code>, Law 15.211/2025 Digital ECA)</strong>, with remote configuration support for the Netherlands (<code>NL</code>) and EU-wide regulatory updates.</li>
-      <li><strong>Draw Log Retention (<code>draw_log_retention_days: $($data.compliance.draw_log_retention_days)</code>):</strong> Server-side crate draw logs are retained for $($data.compliance.draw_log_retention_days) days for player verification and regulatory compliance.</li>
+      <li><strong>Draw Log Retention (<code>draw_log_retention_days: $($data.compliance.draw_log_retention_days)</code>):</strong> Server-side crate draw logs (<code>crate_opens</code>) are kept for at least $($data.compliance.draw_log_retention_days) days; after account deletion they are kept only without the account link and deleted once $($data.compliance.draw_log_retention_days) days old.</li>
     </ul>
   </main>
 
@@ -148,5 +147,6 @@ $($scrapRows -join "`n")
 </html>
 "@
 
-Set-Content -Path $OutHtmlPath -Value $html -Encoding UTF8
-Write-Host "Generated $OutHtmlPath from $CratesJsonPath"
+$utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+[System.IO.File]::WriteAllText($OutHtmlPath, $html, $utf8NoBom)
+Write-Host "Generated $OutHtmlPath from $CratesJsonPath (UTF-8 no BOM)"
