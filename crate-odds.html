@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<!-- Draft â€” pending legal review -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mystery Crate Odds &amp; Pity Disclosure â€” Burstdown | Frictionborn</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a class="brand" href="index.html">BURSTDOWN <span>by Frictionborn</span></a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="delete-account.html">Account Deletion</a>
+        <a href="crate-odds.html" aria-current="page">Crate Odds</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Mystery Crate Odds &amp; Pity Disclosure</h1>
+    <p class="meta">Last updated: 28 October 2026 &middot; Publisher: <strong>Frictionborn</strong> &middot; Generated at build time from <code>data/crates.json</code> (v1)</p>
+
+    <p>In accordance with global consumer protection rules and Google Play policy on randomized virtual items, this page discloses the exact drop probabilities, item counts, guaranteed pity timers, duplicate conversion rates, and regional availability rules for all Mystery Crates in <strong>Burstdown</strong> (<em>Burstdown: Bottle Stair Smash</em>).</p>
+
+    <h2>1. Crate Drop-Rate Probabilities &amp; Pity Timers</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Crate Type</th>
+          <th>Cost / How Obtained</th>
+          <th>Items per Crate</th>
+          <th>Common</th>
+          <th>Rare</th>
+          <th>Epic</th>
+          <th>Legendary</th>
+          <th>Mythic</th>
+          <th>Pity / Guarantee Rules</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Standard Crate</strong> (<code>standard</code>)</td>
+          <td>1 Key (<code>keys: 1</code>; earned in-game, never sold)</td>
+          <td>2</td>
+          <td>70%</td>
+          <td>24.2%</td>
+          <td>5%</td>
+          <td>0.75%</td>
+          <td>0.05%</td>
+          <td>Guaranteed <strong>Epic or better within 10 opens</strong> (<code>epic_or_better_within: 10</code>)</td>
+        </tr>
+        <tr>
+          <td><strong>Premium Crate</strong> (<code>premium</code>)</td>
+          <td>150 Gems (<code>gems: 150</code>; paid / online-only)</td>
+          <td>3</td>
+          <td>0%</td>
+          <td>62%</td>
+          <td>30%</td>
+          <td>7%</td>
+          <td>1%</td>
+          <td>Guaranteed <strong>Legendary or better within 30 opens</strong> (<code>legendary_or_better_within: 30</code>); Guaranteed <strong>Mythic within 90 opens</strong> (<code>mythic_within: 90</code>)</td>
+        </tr>
+        <tr>
+          <td><strong>World Crate</strong> (<code>world</code>)</td>
+          <td>Gameplay / Season Reward (<code>reward: true</code>)</td>
+          <td>3</td>
+          <td>40%</td>
+          <td>40%</td>
+          <td>20%</td>
+          <td>0%</td>
+          <td>0%</td>
+          <td>Guaranteed at least <strong>1 Epic item per crate</strong> (<code>guarantee.epic: 1</code>)</td>
+        </tr>
+        <tr>
+          <td><strong>Season Crate</strong> (<code>season</code>)</td>
+          <td>Gameplay / Season Reward (<code>reward: true</code>)</td>
+          <td>3</td>
+          <td>0%</td>
+          <td>50%</td>
+          <td>38%</td>
+          <td>10%</td>
+          <td>2%</td>
+          <td>Standard rarity roll per item slot</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>2. Item Pool &amp; Duplicate Conversion (Scrap)</h2>
+    <p><strong>Pool Rules:</strong> Items with in_crates=true from catalog (vessels, fills, burst_fx, trails, crack_styles). Environments and limited items excluded.</p>
+    <p>If a crate roll yields an item you already own, it is automatically converted into <strong>Scrap</strong> (used to craft specific items directly without randomness) at the following rates:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Rarity</th>
+          <th>Scrap Granted per Duplicate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Common</td>
+          <td>2 Scrap</td>
+        </tr>
+        <tr>
+          <td>Rare</td>
+          <td>8 Scrap</td>
+        </tr>
+        <tr>
+          <td>Epic</td>
+          <td>30 Scrap</td>
+        </tr>
+        <tr>
+          <td>Legendary</td>
+          <td>100 Scrap</td>
+        </tr>
+        <tr>
+          <td>Mythic</td>
+          <td>300 Scrap</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>3. Player Protection &amp; Regional Compliance Rules</h2>
+    <ul>
+      <li><strong>In-Game Disclosure Before Open (<code>show_odds_before_open: true</code>):</strong> These exact percentages and your current pity-timer counter are displayed directly on the crate purchase/open screen inside Burstdown.</li>
+      <li><strong>No "Kompu Gacha" / Set-Completion Prizes (<code>set_completion_rewards: false</code>):</strong> There are no rewards or bonuses gated behind collecting a complete set of randomized crate items.</li>
+      <li><strong>Minor Mode Protection (<code>minor_mode_paid_crates: false</code>):</strong> Paid mystery crates (such as the Premium Crate) are completely disabled for players in the <code>13â€“17</code> age band.</li>
+      <li><strong>Regional Availability (<code>paid_crates_blocked_countries</code>):</strong> Paid mystery crates are disabled in jurisdictions where paid loot boxes are prohibited or restricted by law, including <strong>Belgium (<code>BE</code>)</strong> and <strong>Brazil (<code>BR</code>, Law 15.211/2025 Digital ECA)</strong>, with remote configuration support for the Netherlands (<code>NL</code>) and EU-wide regulatory updates.</li>
+      <li><strong>Draw Log Retention (<code>draw_log_retention_days: 90</code>):</strong> Server-side crate draw logs are retained for 90 days for player verification and regulatory compliance.</li>
+    </ul>
+  </main>
+
+  <footer>
+    &copy; 2026 Frictionborn. All rights reserved. &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="delete-account.html">Delete Account</a> &middot; <a href="crate-odds.html">Crate Odds</a>
+  </footer>
+</body>
+</html>
